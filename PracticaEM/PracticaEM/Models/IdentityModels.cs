@@ -33,5 +33,7 @@ namespace PracticaEM.Models
         public System.Data.Entity.DbSet<PracticaEM.Models.GrupoClase> GrupoClases { get; set; }
 
         public System.Data.Entity.DbSet<PracticaEM.Models.Curso> Cursoes { get; set; }
+
+        public System.Data.Entity.DbSet<PracticaEM.Models.Matricula> Matriculas { get; set; }
     }
 }
