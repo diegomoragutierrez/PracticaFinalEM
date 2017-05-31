@@ -29,5 +29,7 @@ namespace PracticaEM.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PracticaEM.Models.GrupoClase> GrupoClases { get; set; }
     }
 }
