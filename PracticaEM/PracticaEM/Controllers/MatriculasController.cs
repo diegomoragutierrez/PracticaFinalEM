@@ -17,7 +17,8 @@ namespace PracticaEM.Controllers
         // GET: Matriculas
         public ActionResult Index()
         {
-            return View(db.Matriculas.ToList());
+            var matriculas = db.Matriculas.Include(m => m.User);
+            return View(matriculas.ToList());
         }
 
         // GET: Matriculas/Details/5
@@ -38,6 +39,7 @@ namespace PracticaEM.Controllers
         // GET: Matriculas/Create
         public ActionResult Create()
         {
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MatriculaId,Mail,Ano,Nombre")] Matricula matricula)
+        public ActionResult Create([Bind(Include = "MatriculaId,Mail,Ano,Nombre,UserId")] Matricula matricula)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace PracticaEM.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", matricula.UserId);
             return View(matricula);
         }
 
@@ -70,6 +73,7 @@ namespace PracticaEM.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", matricula.UserId);
             return View(matricula);
         }
 
@@ -78,7 +82,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MatriculaId,Mail,Ano,Nombre")] Matricula matricula)
+        public ActionResult Edit([Bind(Include = "MatriculaId,Mail,Ano,Nombre,UserId")] Matricula matricula)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace PracticaEM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", matricula.UserId);
             return View(matricula);
         }
 

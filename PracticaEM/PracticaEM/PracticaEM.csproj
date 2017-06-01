@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201706011514141_MiEvaluacionAdded.Designer.cs">
       <DependentUpon>201706011514141_MiEvaluacionAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706011602242_FKmatricula.cs" />
+    <Compile Include="Migrations\201706011602242_FKmatricula.Designer.cs">
+      <DependentUpon>201706011602242_FKmatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocente.cs" />
@@ -311,11 +315,6 @@
     <Content Include="Views\Cursos\Details.cshtml" />
     <Content Include="Views\Cursos\Edit.cshtml" />
     <Content Include="Views\Cursos\Index.cshtml" />
-    <Content Include="Views\Matriculas\Create.cshtml" />
-    <Content Include="Views\Matriculas\Delete.cshtml" />
-    <Content Include="Views\Matriculas\Details.cshtml" />
-    <Content Include="Views\Matriculas\Edit.cshtml" />
-    <Content Include="Views\Matriculas\Index.cshtml" />
     <Content Include="Views\AsignacionDocentes\Create.cshtml" />
     <Content Include="Views\AsignacionDocentes\Delete.cshtml" />
     <Content Include="Views\AsignacionDocentes\Details.cshtml" />
@@ -328,6 +327,11 @@
     <Content Include="Views\Evaluacions\Index.cshtml" />
     <Content Include="Views\MiEvaluacions\Details.cshtml" />
     <Content Include="Views\MiEvaluacions\Index.cshtml" />
+    <Content Include="Views\Matriculas\Create.cshtml" />
+    <Content Include="Views\Matriculas\Delete.cshtml" />
+    <Content Include="Views\Matriculas\Details.cshtml" />
+    <Content Include="Views\Matriculas\Edit.cshtml" />
+    <Content Include="Views\Matriculas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706011514141_MiEvaluacionAdded.resx">
       <DependentUpon>201706011514141_MiEvaluacionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011602242_FKmatricula.resx">
+      <DependentUpon>201706011602242_FKmatricula.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
