@@ -17,7 +17,8 @@ namespace PracticaEM.Controllers
         // GET: AsignacionDocentes
         public ActionResult Index()
         {
-            return View(db.AsignacionDocentes.ToList());
+            var asignacionDocentes = db.AsignacionDocentes.Include(a => a.Curso).Include(a => a.GrupoClase).Include(a => a.User);
+            return View(asignacionDocentes.ToList());
         }
 
         // GET: AsignacionDocentes/Details/5
@@ -38,6 +39,9 @@ namespace PracticaEM.Controllers
         // GET: AsignacionDocentes/Create
         public ActionResult Create()
         {
+            ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano");
+            ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre");
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 
@@ -46,7 +50,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AsigDocente,Mail,Ano,Nombre")] AsignacionDocente asignacionDocente)
+        public ActionResult Create([Bind(Include = "AsigDocente,Mail,Ano,Nombre,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +59,9 @@ namespace PracticaEM.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano", asignacionDocente.CursoId);
+            ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre", asignacionDocente.GrupoClaseId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", asignacionDocente.UserId);
             return View(asignacionDocente);
         }
 
@@ -70,6 +77,9 @@ namespace PracticaEM.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano", asignacionDocente.CursoId);
+            ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre", asignacionDocente.GrupoClaseId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", asignacionDocente.UserId);
             return View(asignacionDocente);
         }
 
@@ -78,7 +88,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AsigDocente,Mail,Ano,Nombre")] AsignacionDocente asignacionDocente)
+        public ActionResult Edit([Bind(Include = "AsigDocente,Mail,Ano,Nombre,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +96,9 @@ namespace PracticaEM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano", asignacionDocente.CursoId);
+            ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre", asignacionDocente.GrupoClaseId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", asignacionDocente.UserId);
             return View(asignacionDocente);
         }
 
