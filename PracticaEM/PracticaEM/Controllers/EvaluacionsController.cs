@@ -12,7 +12,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace PracticaEM.Controllers
 {
-    [Authorize(Roles = "profesor")]
     public class EvaluacionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -72,7 +71,7 @@ namespace PracticaEM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", evaluacion.UserId);
             return View(evaluacion);
         }
 
@@ -117,7 +116,7 @@ namespace PracticaEM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", evaluacion.UserId);
             return View(evaluacion);
         }
 

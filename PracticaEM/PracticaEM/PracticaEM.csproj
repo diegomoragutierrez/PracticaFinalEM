@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201706011715080_UsersFixed1.Designer.cs">
       <DependentUpon>201706011715080_UsersFixed1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706012329528_EnumEvalAdded.cs" />
+    <Compile Include="Migrations\201706012329528_EnumEvalAdded.Designer.cs">
+      <DependentUpon>201706012329528_EnumEvalAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocente.cs" />
@@ -344,11 +348,6 @@
     <Content Include="Views\Cursos\Index.cshtml" />
     <Content Include="Views\MiEvaluacions\Details.cshtml" />
     <Content Include="Views\MiEvaluacions\Index.cshtml" />
-    <Content Include="Views\Evaluacions\Create.cshtml" />
-    <Content Include="Views\Evaluacions\Delete.cshtml" />
-    <Content Include="Views\Evaluacions\Details.cshtml" />
-    <Content Include="Views\Evaluacions\Edit.cshtml" />
-    <Content Include="Views\Evaluacions\Index.cshtml" />
     <Content Include="Views\GrupoClases\Create.cshtml" />
     <Content Include="Views\GrupoClases\Delete.cshtml" />
     <Content Include="Views\GrupoClases\Details.cshtml" />
@@ -364,6 +363,11 @@
     <Content Include="Views\Matriculas\Details.cshtml" />
     <Content Include="Views\Matriculas\Edit.cshtml" />
     <Content Include="Views\Matriculas\Index.cshtml" />
+    <Content Include="Views\Evaluacions\Create.cshtml" />
+    <Content Include="Views\Evaluacions\Delete.cshtml" />
+    <Content Include="Views\Evaluacions\Details.cshtml" />
+    <Content Include="Views\Evaluacions\Edit.cshtml" />
+    <Content Include="Views\Evaluacions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -421,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706011715080_UsersFixed1.resx">
       <DependentUpon>201706011715080_UsersFixed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706012329528_EnumEvalAdded.resx">
+      <DependentUpon>201706012329528_EnumEvalAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
