@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PracticaEM.Models;
+using Microsoft.AspNet.Identity;
 
 namespace PracticaEM.Controllers
 {
+    [Authorize(Roles = "alumno")]
     public class MiEvaluacionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,7 +19,14 @@ namespace PracticaEM.Controllers
         // GET: MiEvaluacions
         public ActionResult Index()
         {
-            return View(db.Evaluacions.ToList());
+            List<Evaluacion> evals = new List<Evaluacion>();
+            foreach (Evaluacion eval in db.Evaluacions.ToList())
+            {
+                if(eval.UserId == User.Identity.GetUserId()){
+                     evals.Add(eval);
+                }
+            }
+            return View(evals);
         }
 
         // GET: MiEvaluacions/Details/5

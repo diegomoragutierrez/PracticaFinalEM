@@ -10,6 +10,7 @@ using PracticaEM.Models;
 
 namespace PracticaEM.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AsignacionDocentesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
