@@ -16,5 +16,8 @@ namespace PracticaEM.Models
         public float NotaPr { get; set; }
         public float NotaTest { get; set; }
         public String Convocatoria { get; set; }
+
+        public string UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

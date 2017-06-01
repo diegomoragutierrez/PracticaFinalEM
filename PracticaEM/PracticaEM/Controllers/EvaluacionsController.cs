@@ -17,7 +17,8 @@ namespace PracticaEM.Controllers
         // GET: Evaluacions
         public ActionResult Index()
         {
-            return View(db.Evaluacions.ToList());
+            var evaluacions = db.Evaluacions.Include(e => e.User);
+            return View(evaluacions.ToList());
         }
 
         // GET: Evaluacions/Details/5
@@ -38,6 +39,7 @@ namespace PracticaEM.Controllers
         // GET: Evaluacions/Create
         public ActionResult Create()
         {
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EvaluacionId,NotaT1,NotaT2,NotaT3,NotaPr,NotaTest,Convocatoria")] Evaluacion evaluacion)
+        public ActionResult Create([Bind(Include = "EvaluacionId,NotaT1,NotaT2,NotaT3,NotaPr,NotaTest,Convocatoria,UserId")] Evaluacion evaluacion)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace PracticaEM.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
             return View(evaluacion);
         }
 
@@ -70,6 +73,7 @@ namespace PracticaEM.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
             return View(evaluacion);
         }
 
@@ -78,7 +82,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EvaluacionId,NotaT1,NotaT2,NotaT3,NotaPr,NotaTest,Convocatoria")] Evaluacion evaluacion)
+        public ActionResult Edit([Bind(Include = "EvaluacionId,NotaT1,NotaT2,NotaT3,NotaPr,NotaTest,Convocatoria,UserId")] Evaluacion evaluacion)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace PracticaEM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
             return View(evaluacion);
         }
 
