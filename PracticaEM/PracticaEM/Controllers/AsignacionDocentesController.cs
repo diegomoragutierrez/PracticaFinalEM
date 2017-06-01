@@ -50,7 +50,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AsigDocente,Mail,Ano,Nombre,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
+        public ActionResult Create([Bind(Include = "AsigDocenteId,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AsigDocente,Mail,Ano,Nombre,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
+        public ActionResult Edit([Bind(Include = "AsigDocenteId,UserId,GrupoClaseId,CursoId")] AsignacionDocente asignacionDocente)
         {
             if (ModelState.IsValid)
             {

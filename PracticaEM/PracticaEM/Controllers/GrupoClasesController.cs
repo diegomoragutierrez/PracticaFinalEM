@@ -46,7 +46,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GrupoClaseID,Nombre,Curso")] GrupoClase grupoClase)
+        public ActionResult Create([Bind(Include = "GrupoClaseID,Nombre,Cupo")] GrupoClase grupoClase)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace PracticaEM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GrupoClaseID,Nombre,Curso")] GrupoClase grupoClase)
+        public ActionResult Edit([Bind(Include = "GrupoClaseID,Nombre,Cupo")] GrupoClase grupoClase)
         {
             if (ModelState.IsValid)
             {

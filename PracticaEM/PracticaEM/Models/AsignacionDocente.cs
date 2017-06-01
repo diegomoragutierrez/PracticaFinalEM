@@ -9,10 +9,10 @@ namespace PracticaEM.Models
     public class AsignacionDocente
     {
         [Key]
-        public int AsigDocente { get; set; }
-        public string Mail { get; set; }
-        public string Ano { get; set; }
-        public string Nombre { get; set; }
+        public int AsigDocenteId { get; set; }
+        //public string Mail { get; set; }
+        //public string Ano { get; set; }
+        //public string Nombre { get; set; }
 
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }

@@ -12,22 +12,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Curso.Ano)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GrupoClase.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ano)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th></th>
     </tr>
@@ -42,15 +33,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.User.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ano)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MatriculaId }) |

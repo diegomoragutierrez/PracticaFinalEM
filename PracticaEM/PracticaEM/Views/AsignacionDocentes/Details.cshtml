@@ -34,33 +34,9 @@
             @Html.DisplayFor(model => model.User.Email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Mail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ano)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ano)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AsigDocente }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AsigDocenteId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

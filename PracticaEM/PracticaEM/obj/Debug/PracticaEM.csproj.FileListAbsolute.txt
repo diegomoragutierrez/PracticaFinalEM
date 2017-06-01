@@ -173,3 +173,8 @@ D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\Pract
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.FKAsignacionDocente.resources
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.newsFKmatricula.resources
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.FKevaluacion.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.GrupoClaseFixed.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.AsignacionDocenteFixed.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.MatriculaFixed.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.UsersFixed.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.UsersFixed1.resources

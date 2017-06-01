@@ -11,6 +11,6 @@ namespace PracticaEM.Models
         [Key]
         public int GrupoClaseID { get; set; }
         public String Nombre { get; set; }
-        public String Curso { get; set; }
+        public int Cupo { get; set; }
     }
 }
