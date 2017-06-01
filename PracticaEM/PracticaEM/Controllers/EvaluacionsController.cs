@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PracticaEM.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace PracticaEM.Controllers
 {
@@ -40,7 +42,19 @@ namespace PracticaEM.Controllers
         // GET: Evaluacions/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
+            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<ApplicationUser> users = new List<ApplicationUser>();
+            foreach (ApplicationUser user in db.Users.ToList())
+            {
+                foreach (String rol in userMgr.GetRoles(user.Id))
+                {
+                    if (rol.Equals("alumno"))
+                    {
+                        users.Add(user);
+                    }
+                }
+            }
+            ViewBag.UserId = new SelectList(users, "Id", "Email");
             return View();
         }
 
@@ -74,7 +88,19 @@ namespace PracticaEM.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", evaluacion.UserId);
+            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<ApplicationUser> users = new List<ApplicationUser>();
+            foreach (ApplicationUser user in db.Users.ToList())
+            {
+                foreach (String rol in userMgr.GetRoles(user.Id))
+                {
+                    if (rol.Equals("alumno"))
+                    {
+                        users.Add(user);
+                    }
+                }
+            }
+            ViewBag.UserId = new SelectList(users, "Id", "Email", evaluacion.User.Id);
             return View(evaluacion);
         }
 

@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PracticaEM.Models;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace PracticaEM.Controllers
 {
@@ -42,7 +45,19 @@ namespace PracticaEM.Controllers
         {
             ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano");
             ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre");
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
+            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<ApplicationUser> users = new List<ApplicationUser>();
+            foreach (ApplicationUser user in db.Users.ToList())
+            {
+                foreach (String rol in userMgr.GetRoles(user.Id))
+                {
+                    if (rol.Equals("alumno"))
+                    {
+                        users.Add(user);
+                    }
+                }
+            }
+            ViewBag.UserId = new SelectList(users, "Id", "Email");
             return View();
         }
 
@@ -80,7 +95,19 @@ namespace PracticaEM.Controllers
             }
             ViewBag.CursoId = new SelectList(db.Cursoes, "CursoId", "Ano", matricula.CursoId);
             ViewBag.GrupoClaseId = new SelectList(db.GrupoClases, "GrupoClaseID", "Nombre", matricula.GrupoClaseId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", matricula.UserId);
+            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<ApplicationUser> users = new List<ApplicationUser>();
+            foreach (ApplicationUser user in db.Users.ToList())
+            {
+                foreach (String rol in userMgr.GetRoles(user.Id))
+                {
+                    if (rol.Equals("alumno"))
+                    {
+                        users.Add(user);
+                    }
+                }
+            }
+            ViewBag.UserId = new SelectList(users, "Id", "Email", matricula.User.Id);
             return View(matricula);
         }
 
