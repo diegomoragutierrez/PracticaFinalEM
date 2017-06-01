@@ -16,5 +16,11 @@ namespace PracticaEM.Models
 
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
+
+        public int GrupoClaseId { get; set; }
+        public virtual GrupoClase GrupoClase { get; set; }
+
+        public int CursoId { get; set; }
+        public virtual Curso Curso { get; set; }
     }
 }
