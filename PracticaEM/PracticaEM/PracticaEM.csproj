@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AsignacionDocentesController.cs" />
     <Compile Include="Controllers\CursosController.cs" />
+    <Compile Include="Controllers\EvaluacionsController.cs" />
     <Compile Include="Controllers\GrupoClasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -221,10 +222,15 @@
     <Compile Include="Migrations\201706010001154_AsignacionDocenteAdded.Designer.cs">
       <DependentUpon>201706010001154_AsignacionDocenteAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706011502429_EvaluacionAdded.cs" />
+    <Compile Include="Migrations\201706011502429_EvaluacionAdded.Designer.cs">
+      <DependentUpon>201706011502429_EvaluacionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocente.cs" />
     <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Evaluacion.cs" />
     <Compile Include="Models\GrupoClase.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -310,6 +316,11 @@
     <Content Include="Views\AsignacionDocentes\Details.cshtml" />
     <Content Include="Views\AsignacionDocentes\Edit.cshtml" />
     <Content Include="Views\AsignacionDocentes\Index.cshtml" />
+    <Content Include="Views\Evaluacions\Create.cshtml" />
+    <Content Include="Views\Evaluacions\Delete.cshtml" />
+    <Content Include="Views\Evaluacions\Details.cshtml" />
+    <Content Include="Views\Evaluacions\Edit.cshtml" />
+    <Content Include="Views\Evaluacions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706010001154_AsignacionDocenteAdded.resx">
       <DependentUpon>201706010001154_AsignacionDocenteAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011502429_EvaluacionAdded.resx">
+      <DependentUpon>201706011502429_EvaluacionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

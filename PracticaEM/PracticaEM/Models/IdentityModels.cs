@@ -37,5 +37,7 @@ namespace PracticaEM.Models
         public System.Data.Entity.DbSet<PracticaEM.Models.Matricula> Matriculas { get; set; }
 
         public System.Data.Entity.DbSet<PracticaEM.Models.AsignacionDocente> AsignacionDocentes { get; set; }
+
+        public System.Data.Entity.DbSet<PracticaEM.Models.Evaluacion> Evaluacions { get; set; }
     }
 }
