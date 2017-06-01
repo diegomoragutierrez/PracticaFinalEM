@@ -168,3 +168,4 @@ D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\Pract
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.MatriculaAdded.resources
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.AsignacionDocenteAdded.resources
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.EvaluacionAdded.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.MiEvaluacionAdded.resources

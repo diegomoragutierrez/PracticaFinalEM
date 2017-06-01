@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PracticaEM.Models.Evaluacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NotaT1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotaT2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotaT3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotaPr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotaTest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Convocatoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaT1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaT2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaT3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaPr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaTest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Convocatoria)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.EvaluacionId })
+        </td>
+    </tr>
+}
+
+</table>

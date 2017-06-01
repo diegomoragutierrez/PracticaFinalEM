@@ -203,6 +203,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
+    <Compile Include="Controllers\MiEvaluacionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +226,10 @@
     <Compile Include="Migrations\201706011502429_EvaluacionAdded.cs" />
     <Compile Include="Migrations\201706011502429_EvaluacionAdded.Designer.cs">
       <DependentUpon>201706011502429_EvaluacionAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706011514141_MiEvaluacionAdded.cs" />
+    <Compile Include="Migrations\201706011514141_MiEvaluacionAdded.Designer.cs">
+      <DependentUpon>201706011514141_MiEvaluacionAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,6 +326,8 @@
     <Content Include="Views\Evaluacions\Details.cshtml" />
     <Content Include="Views\Evaluacions\Edit.cshtml" />
     <Content Include="Views\Evaluacions\Index.cshtml" />
+    <Content Include="Views\MiEvaluacions\Details.cshtml" />
+    <Content Include="Views\MiEvaluacions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706011502429_EvaluacionAdded.resx">
       <DependentUpon>201706011502429_EvaluacionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011514141_MiEvaluacionAdded.resx">
+      <DependentUpon>201706011514141_MiEvaluacionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
