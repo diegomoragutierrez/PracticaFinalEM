@@ -166,3 +166,4 @@ D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\Pract
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.csproj.GenerateResource.Cache
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.CursoAdded.resources
 D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.MatriculaAdded.resources
+D:\Documentos\Visual Studio 2015\Projects\PracticaEMFinal2\PracticaFinalEM\PracticaEM\PracticaEM\obj\Debug\PracticaEM.Migrations.AsignacionDocenteAdded.resources
