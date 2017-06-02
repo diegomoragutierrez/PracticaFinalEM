@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PracticaEM.Models;
+using Microsoft.AspNet.Identity;
 
 namespace PracticaEM.Controllers
 {
@@ -18,6 +19,9 @@ namespace PracticaEM.Controllers
         // GET: GrupoClases
         public ActionResult Index()
         {
+            int grupo = getGrupoClase();
+
+            //var matriculas = db.Matriculas.Include(m => m.Curso).Include(m => m.GrupoClase).Include(m => m.User).Where(p => p.GrupoClaseId == grupo).ToList();
             return View(db.GrupoClases.ToList());
         }
 
@@ -123,6 +127,21 @@ namespace PracticaEM.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private int getGrupoClase()
+        {
+
+            string currentUserId = User.Identity.GetUserId();
+
+            var grupos = db.AsignacionDocentes.Where(p => p.UserId == currentUserId).ToList();
+
+            if (grupos.Count == 0)
+
+                return -1;
+
+            else return grupos.First().GrupoClase.GrupoClaseID;
+
         }
     }
 }
