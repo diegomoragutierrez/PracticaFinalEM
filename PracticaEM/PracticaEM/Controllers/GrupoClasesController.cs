@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace PracticaEM.Controllers
 {
-    [Authorize(Roles = "profesor")]
+    [Authorize(Roles = "profesor, admin")]
     public class GrupoClasesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

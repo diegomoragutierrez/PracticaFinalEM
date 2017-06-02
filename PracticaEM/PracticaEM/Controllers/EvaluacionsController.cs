@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace PracticaEM.Controllers
 {
-    [Authorize(Roles = "profesor")]
+    [Authorize(Roles = "profesor, admin")]
     public class EvaluacionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
